@@ -1,312 +1,234 @@
-/**
- * Variables
- */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap");
 
-// Colors
-$white: hsla(255, 100%, 100%, 1.00);
-$grey: hsla(129, 0%, 33%, 1.00);
-$red: hsla(358, 86%, 69%, 1.00);
-
-// Typography
-$source-sans-pro: 'Source Sans Pro', sans-serif;
-$font-light: 300;
-
-$linear         : cubic-bezier(0.250, 0.250, 0.750, 0.750);
-$ease           : cubic-bezier(0.250, 0.100, 0.250, 1.000);
-$ease-in        : cubic-bezier(0.420, 0.000, 1.000, 1.000);
-$ease-out       : cubic-bezier(0.000, 0.000, 0.580, 1.000);
-$ease-in-out    : cubic-bezier(0.420, 0.000, 0.580, 1.000);
-
-$easeInQuad     : cubic-bezier(0.550, 0.085, 0.680, 0.530);
-$easeInCubic    : cubic-bezier(0.550, 0.055, 0.675, 0.190);
-$easeInQuart    : cubic-bezier(0.895, 0.030, 0.685, 0.220);
-$easeInQuint    : cubic-bezier(0.755, 0.050, 0.855, 0.060);
-$easeInSine     : cubic-bezier(0.470, 0.000, 0.745, 0.715);
-$easeInExpo     : cubic-bezier(0.950, 0.050, 0.795, 0.035);
-$easeInCirc     : cubic-bezier(0.600, 0.040, 0.980, 0.335);
-$easeInBack     : cubic-bezier(0.600, -0.280, 0.735, 0.045);
-
-$easeOutQuad    : cubic-bezier(0.250, 0.460, 0.450, 0.940);
-$easeOutCubic   : cubic-bezier(0.215, 0.610, 0.355, 1.000);
-$easeOutQuart   : cubic-bezier(0.165, 0.840, 0.440, 1.000);
-$easeOutQuint   : cubic-bezier(0.230, 1.000, 0.320, 1.000);
-$easeOutSine    : cubic-bezier(0.390, 0.575, 0.565, 1.000);
-$easeOutExpo    : cubic-bezier(0.190, 1.000, 0.220, 1.000);
-$easeOutCirc    : cubic-bezier(0.075, 0.820, 0.165, 1.000);
-$easeOutBack    : cubic-bezier(0.175, 0.885, 0.320, 1.275);
-
-$easeInOutQuad  : cubic-bezier(0.455, 0.030, 0.515, 0.955);
-$easeInOutCubic : cubic-bezier(0.645, 0.045, 0.355, 1.000);
-$easeInOutQuart : cubic-bezier(0.770, 0.000, 0.175, 1.000);
-$easeInOutQuint : cubic-bezier(0.860, 0.000, 0.070, 1.000);
-$easeInOutSine  : cubic-bezier(0.445, 0.050, 0.550, 0.950);
-$easeInOutExpo  : cubic-bezier(1.000, 0.000, 0.000, 1.000);
-$easeInOutCirc  : cubic-bezier(0.785, 0.135, 0.150, 0.860);
-$easeInOutBack  : cubic-bezier(0.680, -0.550, 0.265, 1.550);
-
-/**
- * Functions
- */
-
-// Convert a pixel value to REM units.
-@function rem($pixel) {
-  @return $pixel / 16 + rem;
-}
-
-/**
- * Placeholders
- */
-
-%list-reset {
-  list-style: none;
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: "Montserrat", sans-serif;
 }
-
-/**
- * Styles
- */
 
 body {
-  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/204808/kwaknamsin-contact.jpg') center center no-repeat;
-  background-size: cover;
-  font-family: $source-sans-pro;
+  background: #585c68;
+  font-size: 14px;
+  line-height: 22px;
+  color: #555555;
 }
 
-.o-main {
-  height: 100vh;
-  width: 100vw;
-}
-
-/**
- * Header
- */
-
-.c-header {
-  display: flex;
-  justify-content: space-between;
-  padding: 0 rem(36);
-}
-
-/**
- * Logo
- */
-
-.c-logo {
-  display: block;
-  margin-top: rem(20);
-}
-
-/**
- * Menu
- */
-
-.c-menu {
-  align-items: center;
-  display: flex;
-}
-
-.c-menu__list {
-  display: flex;
-}
-
-.c-menu__list {
-  @extend %list-reset;
-}
-
-.c-menu__link {
-  color: $grey;
-  display: block;
-  letter-spacing: rem(7);
-  margin-left: rem(20);
-  padding: rem(30) rem(20);
-  text-decoration: none;
+.bold {
+  font-weight: 700;
+  font-size: 20px;
   text-transform: uppercase;
 }
 
-/**
- * Footer
- */
-
-.c-footer {
-  bottom: rem(147);
-  left: 50%;
-  position: fixed;
-  text-align: center;
-  transform: translateX(-50%);
+.semi-bold {
+  font-weight: 500;
+  font-size: 16px;
 }
 
-/**
- * Email
- */
-
-.c-email {
-  color: $white;
-  display: block;
-  font-size: rem(26);
-  padding: rem(20);
-  text-decoration: none;
-}
-
-/**
- * Copyright
- */
-
-.c-copyright {
-  color: $white;
-  font-size: rem(12);
-  font-weight: $font-light;
-  letter-spacing: 1px;
-}
-
-/**
- * Cursor
- */
-
-.c-cursor {
-  pointer-events: none;
-
-  html:not(.is-desktop) & {
-    display: none;
-  }
-}
-
-.c-cursor__pointer {
-  height: rem(14);
-  left: rem(-7);
-  opacity: 0;
-  position: fixed;
-  top: rem(-7);
-  width: rem(14);
-  z-index: 9;
-
-  &::before {
-    background-color: $red;
-    border-radius: 50%;
-    content: '';
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    transition: all 0.6s $easeOutQuart;
-    width: 100%;
-  }
-
-  .is-hover & {
-    &::before {
-      opacity: 0.3;
-      transform: scale(3.5);
-    }
-  }
-}
-
-.c-magnetic {
-  span {
-    display: inline-block;
-    pointer-events: none;
-  }
-}
-
-/**
- * FrontEnd30
- */
-
-.c-intro {
-  animation: fe30-anime 1s ease-in-out 4s forwards;
-  background: hsla(229, 11%, 23%, 1.00);
-  bottom: 0;
+.resume {
+  width: 800px;
+  height: auto;
   display: flex;
-  height: 97px;
-  justify-content: center;
-  left: 50%;
-  opacity: 0;
-  position: fixed;
-  transform: translateX(-50%);
+  margin: 50px auto;
+}
+
+.resume .resume_left {
+  width: 280px;
+  background: #0bb5f4;
+}
+
+.resume .resume_left .resume_profile {
   width: 100%;
+  height: 280px;
 }
 
-.c-fe30 {
-  color: hsla(0, 0%, 100%, 1);
-  margin-top: 40px;
-  text-align: center;
-  
-  a {
-    color: hsla(39, 84%, 53%, 1);
-    
-    &:hover {
-      text-decoration: none;
-    }
-  }
+.resume .resume_left .resume_profile img {
+  width: 100%;
+  height: 100%;
 }
 
-.c-ryanyu {
-  background-color: transparent;
-  display: block;
-  height: 77px;
-  font-family: 'Kalam', cursive;
-  margin: 10px 20px 10px 0;
-  position: relative;
-  text-align: center;
-  width: 77px;
-
-  img {
-    background-color: hsla(0, 0%, 100%, 1);
-    border: rem(3) solid hsla(39, 84%, 53%, 1);
-    border-radius: 50%;
-    height: rem(70);
-    object-fit: contain;
-    width: rem(70);
-  }
+.resume .resume_left .resume_content {
+  padding: 0 25px;
 }
 
-.c-ryanyu__front {
-  backface-visibility: hidden;
-  height: inherit;
-  position: absolute;
-  top: 0;
-  transform: rotateX(0) rotateY(0);
-  transform-style: preserve-3d;
-  transition: all 0.5s cubic-bezier(.77, 0, .175, 1);
-  z-index: 2000;
-
-  .c-ryanyu:hover & {
-    transform: rotateY(180deg);
-  }
+.resume .title {
+  margin-bottom: 20px;
 }
 
-.c-ryanyu__back {
-  background-color: hsla(0, 0%, 100%, 1);
-  backface-visibility: hidden;
+.resume .resume_left .bold {
+  color: #fff;
+}
+
+.resume .resume_left .regular {
+  color: #b1eaff;
+}
+
+.resume .resume_item {
+  padding: 25px 0;
+  border-bottom: 2px solid #b1eaff;
+}
+
+.resume .resume_left .resume_item:last-child,
+.resume .resume_right .resume_item:last-child {
+  border-bottom: 0px;
+}
+
+.resume .resume_left ul li {
+  display: flex;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.resume .resume_left ul li:last-child {
+  margin-bottom: 0;
+}
+
+.resume .resume_left ul li .icon {
+  width: 35px;
+  height: 35px;
+  background: #fff;
+  color: #0bb5f4;
   border-radius: 50%;
-  color: hsla(39, 84%, 53%, 1);
-  height: inherit;
-  position: absolute;
-  text-align: center;
-  top: 0;
-  transform: rotateY(180deg);
-  transform-style: preserve-3d;
-  transition: all 0.5s cubic-bezier(.77, 0, .175, 1);
-  width: inherit;
-  z-index: 1000;
-
-  &::before {
-    content: 'Ryan Yu';
-    display: block;
-    transform: rotate(-45deg) translate(-6px, 27px);
-    width: rem(50);
-  }
-
-  .c-ryanyu:hover & {
-    transform: rotateY(0);
-  }
+  margin-right: 15px;
+  font-size: 16px;
+  position: relative;
 }
 
-@keyframes fe30-anime {
-  0% {
-    opacity: 0;
-  }
-  
-  100% {
-    opacity: 1;
-  }
+.resume .icon i,
+.resume .resume_right .resume_hobby ul li i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.resume .resume_left ul li .data {
+  color: #b1eaff;
+}
+
+.resume .resume_left .resume_skills ul li {
+  display: flex;
+  margin-bottom: 10px;
+  color: #b1eaff;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.resume .resume_left .resume_skills ul li .skill_name {
+  width: 25%;
+}
+
+.resume .resume_left .resume_skills ul li .skill_progress {
+  width: 60%;
+  margin: 0 5px;
+  height: 5px;
+  background: #009fd9;
+  position: relative;
+}
+
+.resume .resume_left .resume_skills ul li .skill_per {
+  width: 15%;
+}
+
+.resume .resume_left .resume_skills ul li .skill_progress span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #fff;
+}
+
+.resume .resume_left .resume_social .semi-bold {
+  color: #fff;
+  margin-bottom: 3px;
+}
+
+.resume .resume_right {
+  width: 520px;
+  background: #fff;
+  padding: 25px;
+}
+
+.resume .resume_right .bold {
+  color: #0bb5f4;
+}
+
+.resume .resume_right .resume_work ul,
+.resume .resume_right .resume_education ul {
+  padding-left: 40px;
+  overflow: hidden;
+}
+
+.resume .resume_right ul li {
+  position: relative;
+}
+
+.resume .resume_right ul li .date {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.resume .resume_right ul li .info {
+  margin-bottom: 20px;
+}
+
+.resume .resume_right ul li:last-child .info {
+  margin-bottom: 0;
+}
+
+.resume .resume_right .resume_work ul li:before,
+.resume .resume_right .resume_education ul li:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: -25px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  border: 2px solid #0bb5f4;
+}
+
+.resume .resume_right .resume_work ul li:after,
+.resume .resume_right .resume_education ul li:after {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: -21px;
+  width: 2px;
+  height: 115px;
+  background: #0bb5f4;
+}
+
+.resume .resume_right .resume_hobby ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.resume .resume_right .resume_hobby ul li {
+  width: 80px;
+  height: 80px;
+  border: 2px solid #0bb5f4;
+  border-radius: 50%;
+  position: relative;
+  color: #0bb5f4;
+}
+
+.resume .resume_right .resume_hobby ul li i {
+  font-size: 30px;
+}
+
+.resume .resume_right .resume_hobby ul li:before {
+  content: "";
+  position: absolute;
+  top: 40px;
+  right: -52px;
+  width: 50px;
+  height: 2px;
+  background: #0bb5f4;
+}
+
+.resume .resume_right .resume_hobby ul li:last-child:before {
+  display: none;
 }
